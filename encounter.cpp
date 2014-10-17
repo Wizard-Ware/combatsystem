@@ -14,6 +14,15 @@ struct stats{
 	int mp;
     int maxmp;
     };
+    
+    struct magic{
+    int fireball;
+    int fireball_cost;
+    int healing_touch;
+    int healing_touch_cost;
+    int ward;
+    int ward_cost;
+    };
 
 stats encounter(){
 	int roll;
