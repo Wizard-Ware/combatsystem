@@ -39,8 +39,8 @@ int combat_system_mob(int atk, int armor, int health, int def, int maxhp){
 int combat_system_player(int atk, int armor, int health, int def, int maxhp){
 	int roll, damage;
 	srand(time(0));
-	roll = (rand() % 20) + 1; //generates roll between 1 and 20
-	if (roll == 20){ // if roll is a 20 they score a crit
+	roll = (rand() % 20) + 1;
+	if (roll == 20){
 		int damage = (atk * 2) - def;
 		cout << "You swing your sword and get a critital\n";
 		cout << "You hit for " << damage << " points of damage \n";
@@ -56,5 +56,5 @@ int combat_system_player(int atk, int armor, int health, int def, int maxhp){
 	else if (armor> roll + atk){
 		cout << "You miss." << endl;
 	}
-	return health; //returns the health of mob after attack
+	return health;
 }
