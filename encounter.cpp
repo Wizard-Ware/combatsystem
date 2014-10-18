@@ -10,8 +10,8 @@ struct stats{
     int defense;
     int hp;
     int maxhp;
-	int armor;
-	int mp;
+    int armor;
+    int mp;
     int maxmp;
     };
     
