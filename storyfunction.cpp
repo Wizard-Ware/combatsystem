@@ -9,13 +9,13 @@ using std::ofstream;
 using std::ifstream;
 using std::string;
 
-int main(){
+void story(int chapstart, int chapend){
 	string line;
-	ifstream myfile ("story.txt");
+	ifstream myfile("story.txt");
 	if (myfile.is_open()){
-		for(int i = 0; i < 4; i++){ 
+		for (int i = 0; i <= chapend; i++){
 			getline(myfile, line);
-			if (i == 3){
+			if (i >= chapstart && i <= chapend){
 				cout << line << endl;
 			}//end of inner if
 			else{}
@@ -23,9 +23,6 @@ int main(){
 		myfile.close();
 	}//end of if
 	else{
-		cout << "Unable to open file." << endl;
+		cout << "The Grand Tome has been Lost." << endl;
 	}//end of else
-	cout << endl << "Press Enter to close.";
-	cin.get();
-	return 0;
 }
