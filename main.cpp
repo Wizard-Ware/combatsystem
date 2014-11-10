@@ -18,18 +18,18 @@ using std::cin;
 
 int main(){
 	bool game = true;	//loops game until either monster or player is dead.
-	int choice;			//used in the outer menu switch.
-	int spell;			//used in the spell menu switch.
-	int damage;			//holds damage to be subtracted from hp.
+	int choice;		//used in the outer menu switch.
+	int spell;		//used in the spell menu switch.
+	int damage;		//holds damage to be subtracted from hp.
 
 	stats mob;{
 		mob.attack = 0;			//attack damage
 		mob.maxdefense = 0;		//max defense for a reset defense after use of ward.
 		mob.defense = 0;		//defense.
-		mob.hp = 0;				//current hit points.
+		mob.hp = 0;			//current hit points.
 		mob.maxhp = 0;			//maximum hit points a creature can have.
 		mob.armor = 0;			//subtracts from damage before it is applied to hp.
-		mob.mp = 0;				//magic points.
+		mob.mp = 0;			//magic points.
 		mob.maxmp = 0;			//maximum magic points a creature can have.
 	};
 
@@ -45,12 +45,12 @@ int main(){
 	};
 
 	magic cast;{
-		cast.fireball = 5;			//fireball damage
+		cast.fireball = 5;		//fireball damage
 		cast.fireball_cost = 5;		//fireball mp cost
 		cast.healing_touch = 10;	//healing touch damage
-		cast.healing_touch_cost = 5;//healing touch mp cost
-		cast.ward = 3;				//ward amount added to armor
-		cast.ward_cost = 3;			//ward mp cost
+		cast.healing_touch_cost = 5;	//healing touch mp cost
+		cast.ward = 3;			//ward amount added to armor
+		cast.ward_cost = 3;		//ward mp cost
 	};
 	cout << "You run into a monster perpare for a fight." << endl;
 	mob = encounter();
