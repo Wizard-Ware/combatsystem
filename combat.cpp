@@ -23,13 +23,11 @@ int combat_system_mob(int atk, int armor, int health, int def, int maxhp){
 		cout << "The monster attacks and get a critital\n";
 		cout << "It hits you for " << damage << " points of damage. \n";
 		health = health - damage;
-
 	}
 	else if (armor <= roll + atk){
 		int damage = atk - def;
 		cout << "The monster hits for " << damage << " points of damage. \n";
 		health = health - damage;
-
 	}
 	else if (armor> roll + atk){
 		cout << "The monster misses you." << endl;
@@ -46,13 +44,11 @@ int combat_system_player(int atk, int armor, int health, int def, int maxhp){
 		cout << "You swing your sword and get a critital\n";
 		cout << "You hit for " << damage << " points of damage \n";
 		health = health - damage;
-
 	}
 	else if (armor <= roll + atk){
 		int damage = atk - def;
 		cout << "You hit for " << damage << " points of damage \n";
 		health = health - damage;
-
 	}
 	else if (armor> roll + atk){
 		cout << "You miss." << endl;
