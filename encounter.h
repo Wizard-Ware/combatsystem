@@ -3,7 +3,8 @@
 
 //Basic struct of type stats used as the basis for 
 //all monster and player stats
-struct stats{
+class stats{
+public:
     int attack;
     int maxdefense;
     int defense;
@@ -12,6 +13,7 @@ struct stats{
     int armor;
     int mp;
     int maxmp;
+	stats encounter();
     };
 
 /**
