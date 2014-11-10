@@ -4,7 +4,8 @@
 using std::cout;
 using std::endl;
 
-struct magic{
+class magic{
+public:
 	int fireball;
 	int fireball_cost;
 	int healing_touch;
