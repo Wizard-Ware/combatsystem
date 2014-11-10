@@ -2,7 +2,8 @@
 #define COMBAT_H
 
 //Basic struct of type magic to be used for magic casting
-struct magic{
+class magic{
+public:
 	int fireball;
 	int fireball_cost;
 	int healing_touch;
