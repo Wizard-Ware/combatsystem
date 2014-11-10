@@ -16,16 +16,6 @@ public:
     int maxmp;
 	stats encounter();
     };
-    
-class magic{
-public:
-    int fireball;
-    int fireball_cost;
-    int healing_touch;
-    int healing_touch_cost;
-    int ward;
-    int ward_cost;
-    };
 
 stats encounter(){
 	int roll;
