@@ -20,13 +20,13 @@ int combat_system_mob(int atk, int armor, int health, int def, int maxhp){
 	if (roll == 20){
 		int damage = (atk * 2) - def;
 		cout << "The monster attacks and get a critital\n";
-		cout << "It hits you for " << damage << " points of damage \n";
+		cout << "It hits you for " << damage << " points of damage. \n";
 		health = health - damage;
 
 	}
 	else if (armor <= roll + atk){
 		int damage = atk - def;
-		cout << "The monster hits for " << damage << " points of damage \n";
+		cout << "The monster hits for " << damage << " points of damage. \n";
 		health = health - damage;
 
 	}
