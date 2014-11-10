@@ -4,7 +4,8 @@
 using std::cout;
 using std::endl;
 
-struct stats{
+class stats{
+public:
     int attack;
     int maxdefense;
     int defense;
@@ -13,9 +14,11 @@ struct stats{
     int armor;
     int mp;
     int maxmp;
+	stats encounter();
     };
     
-    struct magic{
+class magic{
+public:
     int fireball;
     int fireball_cost;
     int healing_touch;
@@ -27,7 +30,7 @@ struct stats{
 stats encounter(){
 	int roll;
 
-	stats troll;{
+	stats troll;
 		troll.attack = 7;
 		troll.maxdefense = 4;
 		troll.defense = 4;
@@ -36,8 +39,8 @@ stats encounter(){
 		troll.armor = 14;
 		troll.mp = 0;
 		troll.maxmp = 0;
-	};
-	stats goblin;{
+
+	stats goblin;
 		goblin.attack = 3;
 		goblin.maxdefense = 1;
 		goblin.defense = 1;
@@ -46,8 +49,8 @@ stats encounter(){
 		goblin.armor = 15;
 		goblin.mp = 0;
 		goblin.maxmp = 0;
-	};
-	stats orc;{
+
+	stats orc;
 		orc.attack = 5;
 		orc.maxdefense = 3;
 		orc.defense = 3;
@@ -56,7 +59,7 @@ stats encounter(){
 		orc.armor = 16;
 		orc.mp = 0;
 		orc.maxmp = 0;
-	};
+
 	srand (time(0));
 	roll = (rand() % 3)+1;
 	if (roll ==1){
