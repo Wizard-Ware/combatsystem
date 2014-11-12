@@ -18,9 +18,13 @@ int combat_system_mob(int atk, int armor, int health, int def, int maxhp){
 	}
 	else if (armor <= roll + atk){
 		int damage = atk - def;
-		cout << "The monster hits for " << damage << " points of damage. \n";
-		health = health - damage;
-
+		if(damage <= 0){
+			cout << "The monster strikes, but the blow is deflected off your armor" << endl;
+		}
+		else if(damage > 0){
+			cout << "The monster hits for " << damage << " points of damage. \n";
+			health = health - damage;
+		}
 	}
 	else if (armor> roll + atk){
 		cout << "The monster misses you." << endl;
@@ -41,8 +45,13 @@ int combat_system_player(int atk, int armor, int health, int def, int maxhp){
 	}
 	else if (armor <= roll + atk){
 		int damage = atk - def;
-		cout << "You hit for " << damage << " points of damage \n";
-		health = health - damage;
+		if(damage <= 0){
+			cout << "Your blade hits, but if harmlessly deflected away." << endl;
+		}
+		elseif(damage > 0){
+			cout << "You hit for " << damage << " points of damage \n";
+			health = health - damage;
+		}
 
 	}
 	else if (armor> roll + atk){
