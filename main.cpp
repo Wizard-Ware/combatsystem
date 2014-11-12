@@ -24,32 +24,32 @@ int main(){
 	int damage;		//holds damage to be subtracted from hp.
 
 	stats mob;
-		mob.attack = 0;			//attack damage
-		mob.maxdefense = 0;		//max defense for a reset defense after use of ward.
-		mob.defense = 0;		//defense.
-		mob.hp = 0;			//current hit points.
-		mob.maxhp = 0;			//maximum hit points a creature can have.
-		mob.armor = 0;			//subtracts from damage before it is applied to hp.
-		mob.mp = 0;			//magic points.
-		mob.maxmp = 0;			//maximum magic points a creature can have.
+	mob.attack = 0;			//attack damage
+	mob.maxdefense = 0;		//max defense for a reset defense after use of ward.
+	mob.defense = 0;		//defense.
+	mob.hp = 0;			//current hit points.
+	mob.maxhp = 0;			//maximum hit points a creature can have.
+	mob.armor = 0;			//subtracts from damage before it is applied to hp.
+	mob.mp = 0;			//magic points.
+	mob.maxmp = 0;			//maximum magic points a creature can have.
 
 	stats player;
-		player.attack = 5;
-		player.maxdefense = 5;
-		player.defense = 2;
-		player.hp = 20;
-		player.maxhp = 20;
-		player.armor = 0;
-		player.mp = 15;
-		player.maxmp = 15;
+	player.attack = 5;
+	player.maxdefense = 5;
+	player.defense = 2;
+	player.hp = 20;
+	player.maxhp = 20;
+	player.armor = 0;
+	player.mp = 15;
+	player.maxmp = 15;
 
 	magic spellbook;
-		spellbook.fireball = 5;			//fireball damage
-		spellbook.fireball_cost = 5;		//fireball mp cost
-		spellbook.healing_touch = 10;		//healing touch damage
-		spellbook.healing_touch_cost = 5;	//healing touch mp cost
-		spellbook.ward = 3;			//ward amount added to armor
-		spellbook.ward_cost = 3;		//ward mp cost
+	spellbook.fireball = 5;			//fireball damage
+	spellbook.fireball_cost = 5;		//fireball mp cost
+	spellbook.healing_touch = 10;		//healing touch damage
+	spellbook.healing_touch_cost = 5;	//healing touch mp cost
+	spellbook.ward = 3;			//ward amount added to armor
+	spellbook.ward_cost = 3;		//ward mp cost
 
 	cout << "You run into a monster perpare for a fight." << endl;
 	mob = encounter();
@@ -94,16 +94,7 @@ int main(){
 			cin >> spell;
 			switch (spell){ //start of spell submenu//
 			case 1://fireball spell//
-				if (player.mp >= spellbook.fireball_cost){
-					player.mp = player.mp - spellbook.fireball_cost;
-					damage = spellbook.fireball;
-					cout << "You shot a fireball from your hand. \n";
-					cout << "You hit for " << damage << " points of damage. \n";
-					mob.hp = mob.hp - damage;
-				}
-				else{
-					cout << "You don't have enough MP to cast this spell. \n";
-				}
+				fireball(spellbook.fireball_cost, player.mp, spellbook.fireball, mob.hp, mob.armor, mob.defense);
 				break;
 			case 2://Healing Touch spell
 				healing(spellbook.healing_touch_cost, player.mp, spellbook.healing_touch, player.maxhp, player.hp);
@@ -129,7 +120,7 @@ int main(){
 		else if (game = true && mob.hp > 0 && player.hp > 0){
 			// call to the fucntion that calculates combat when mob attacks
 			player.hp = combat_system_mob(mob.attack, player.armor, player.hp, player.defense, player.maxhp);
-			if(player.hp <= 0){
+			if (player.hp <= 0){
 				cout << "You have been defeated." << endl;
 				game = false;
 			}
